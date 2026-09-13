@@ -20,7 +20,7 @@
     --display: "Playfair Display", "Iowan Old Style", Georgia, serif;
     --body: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
 
-    --measure: 40rem;
+    --measure: 50rem;
     color-scheme: light;
   }
 
@@ -269,6 +269,203 @@
   }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  /* ---------- inner pages ---------- */
+
+  /* the masthead already draws a rule, so the first heading needs none of its own */
+  .page-intro { margin-top: 2.6rem; }
+  .page-intro > .section-title { border-top: 0; padding-top: 0; }
+
+  /* ---------- page: Research ---------- */
+
+  .lede > p { margin: 0 0 .72rem; }
+  .lede > p:last-child { margin-bottom: 0; }
+
+  /* one field of research: narrative, then the projects running in it */
+  .field { margin-bottom: 2.5rem; }
+  .field:last-child { margin-bottom: 0; }
+  .field + .field { border-top: 1px solid var(--rule); padding-top: 2.1rem; }
+
+  .field-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    line-height: 1.25;
+    margin: 0 0 .9rem;
+  }
+  /* primary / secondary: a label beside the heading, not part of its voice */
+  .field-title .rank {
+    font-family: var(--body);
+    font-size: .67rem;
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-left: .55rem;
+    vertical-align: .18em;
+    white-space: nowrap;
+  }
+
+  .field > p { margin: 0 0 .72rem; }
+
+  .projects-label {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: .95rem;
+    line-height: 1.2;
+    margin: 1.55rem 0 1rem;
+  }
+
+  /* same dash marker as the lists on the About page */
+  .projects { list-style: none; margin: 0; padding: 0; }
+  .projects li {
+    margin: 0 0 1.55rem;
+    padding-left: 1.15rem;
+    position: relative;
+  }
+  .projects li:last-child { margin-bottom: 0; }
+  .projects li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .72em;
+    width: .45rem;
+    height: 1px;
+    background: var(--rule-strong);
+  }
+
+  .project-title { margin: 0; font-size: .97rem; font-weight: 600; line-height: 1.45; }
+  .project-title .status { font-weight: 400; }
+
+  .project-note { margin: .3rem 0 0; font-size: .89rem; line-height: 1.52; }
+  .project-note + .project-note { margin-top: .6rem; }
+
+  /* ---------- page: Publications & Talks ---------- */
+
+  .subhead {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 1.9rem 0 .9rem;
+    line-height: 1.2;
+  }
+  .section-title + .subhead { margin-top: 0; }
+
+  /* publications: citation / explainer / provenance, all hanging-aligned */
+  .works li.pub { margin: 0 0 1.9rem; }
+  .works li.pub:last-child { margin-bottom: 0; }
+  .pub-note {
+    margin: .28rem 0 0;
+    padding-left: 1.4rem;
+    font-size: .89rem;
+    line-height: 1.52;
+  }
+
+  .pub .work-sub { margin-top: .28rem; }
+
+  /* talks: text beside an optional photograph */
+  .talk {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 0 0 2.85rem;
+  }
+  .talk:last-child { margin-bottom: 0; }
+  .talk-body { flex: 1 1 auto; min-width: 0; }
+  .talk-body p { margin: 0; }
+  .talk-title { font-size: .97rem; font-weight: 600; }
+  .talk-title .with { font-weight: 400; font-size: .92em; }
+  .talk-venue { font-size: .89rem; font-style: italic; line-height: 1.52; margin-top: .12rem !important; }
+  .talk-note  { font-size: .83rem; line-height: 1.5; margin-top: .28rem !important; }
+  .talk-photo {
+    flex: 0 0 11rem;
+    width: 11rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 50% 22%;
+    border-radius: 4px;
+    display: block;
+  }
+
+  @media (max-width: 34rem) {
+    .talk { flex-direction: column; gap: .8rem; }
+    .talk-photo { width: 100%; flex-basis: auto; }
+  }
+
+  /* ---------- teaching ---------- */
+
+  .appointments { margin: 0 0 1.15rem; }
+  .appointments p { margin: 0 0 .2rem; font-weight: 600; font-size: .97rem; }
+  .appointments p:last-child { margin-bottom: 0; }
+  .appointments .term { font-weight: 400; font-size: .89rem; }
+
+  .teach-intro { margin: 0 0 .42rem; font-size: .97rem; line-height: 1.5; }
+  .teach-intro:last-of-type { margin-bottom: 0; }
+
+  /* course: heading, then a smaller description, then a tight stack of terms */
+  .course { margin: 0 0 2.3rem; }
+  .course:last-child { margin-bottom: 0; }
+
+  .course-head { margin: 0 0 .28rem; font-weight: 600; }
+  .course-head .meta { font-weight: 400; }
+
+  .course-desc { margin: 0; font-size: .89rem; line-height: 1.52; }
+
+  .courses-note {
+    margin: 1.7rem 0 0;
+    font-size: .83rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .terms { list-style: none; margin: .68rem 0 0; padding: 0; }
+  .terms li {
+    margin: 0 0 .12rem;
+    padding-left: 1.1rem;
+    position: relative;
+    font-size: .89rem;
+    line-height: 1.5;
+  }
+  .terms li:last-child { margin-bottom: 0; }
+  .terms li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .7em;
+    width: .45rem;
+    height: 1px;
+    background: var(--rule-strong);
+  }
+
+  /* ---------- contact: a single centred column ---------- */
+
+  .contact { text-align: center; }
+  .contact .section-title { text-align: center; margin-bottom: 1.6rem; }
+
+  .contact-intro {
+    max-width: 30rem;
+    margin: 0 auto 2.4rem;
+  }
+  /* balance keeps the lines of a centred paragraph close in length */
+  .contact-intro p { margin: 0 0 .72rem; text-wrap: balance; }
+  .contact-intro p:last-child { margin-bottom: 0; }
+
+  .contact-block { margin: 0 0 2.1rem; }
+  .contact-block p { margin: 0; font-size: .97rem; line-height: 1.42; }
+  .contact-block .who { font-weight: 600; }
+  .contact-block .mail { margin-top: .95rem; }
+
+  .profiles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+    font-size: .97rem;
+  }
+  .profiles li { line-height: 1.4; }
+  .profiles .pending { color: var(--faint); }
 </style>
 </head>
 <body>
@@ -293,42 +490,38 @@
   <div class="bio">
     <p>I am a legal researcher, lecturer, and dual-qualified practitioner with a background in cross-border commercial and corporate litigation.</p>
 
-    <p>I hold an Adjunct Lecturer position at the <a href="https://www.unic.ac.cy/school-of-law/">School of Law of the University of Nicosia</a>, where my teaching has covered private international law, insolvency law and banking law. I am also an Associate Researcher at the University&rsquo;s <a href="https://www.unic.ac.cy/school-of-law/plu/">Procedural Law Unit</a>.</p>
+    <p>I hold an Adjunct Lecturer position at the <a href="https://www.unic.ac.cy/school-of-law/">School of Law of the University of Nicosia</a>, where, in parallel, I conduct research as an Associate Researcher at the University’s <a href="https://www.unic.ac.cy/school-of-law/plu/">Procedural Law Unit</a>.</p>
 
-    <p>I have written on topics ranging from civil procedure and the use of judicial analytics in the evaluation of judges, to jurisdiction and applicable law in AI-related cross-border disputes. My work has appeared in Cypriot and European commentaries, including the first scholarly commentary on the Cypriot Civil Procedure Rules, with further work forthcoming, inter alia, in the <em>Journal of Private International Law</em> and in the Edward Elgar EAPIL series.</p>
+    <p>I have written on civil procedure, private international law, the use of artificial intelligence in civil adjudication, and legal informatics. My work has appeared in Cypriot and European commentaries, including the first scholarly commentary on the Cypriot Civil Procedure Rules, with further work forthcoming in the <em>Journal of Private International Law</em> and the Edward Elgar EAPIL series.</p>
 
-    <p>In the course of my academic work, I have been called to advise the Cyprus Bar Association on the governance of legal information in Cyprus, and I regularly appear before parliamentary committees of the House of Representatives to speak on judicial and civil procedure reform.</p>
+    <p>As part of my academic work, I have also advised the Cyprus Bar Association on the governance of legal information in Cyprus, and appeared before committees of the House of Representatives, contributing to parliamentary discussions on judicial and civil procedure reform.</p>
 
-    <p>My education and practice span three jurisdictions: England and Wales, where I read law and later cross-qualified as a Solicitor; the United States, where I completed my LLM; and Cyprus, where I have practised as an Advocate in commercial and corporate litigation. I draw on all three continually, bringing to my research a comparative appetite, a measure of pragmatism, and (usually) a pull towards questions on which academic and practitioner interests converge.</p>
+    <p>In my work, I bring together elements of three jurisdictions: England and Wales, where I read law and later cross-qualified as a Solicitor; the United States, where I completed my LLM; and Cyprus, where I have practised as an Advocate in commercial and corporate litigation. I draw on all three continually, bringing to my research a comparative appetite, a measure of pragmatism, and (usually) a pull towards questions on which academic and practitioner interests converge.</p>
 
-    <p>My current research projects sit across private international law, comparative civil procedure, legal analytics, and judicial systems and AI. Among these, I have interdisciplinary and empirical work in progress on the legitimacy, independence and accountability implications of large language model use in judicial decision-making, and on the decision-making behaviour and performance of such models, particularly on conflict of laws problems and in multilingual contexts.</p>
+    <p>My current research projects focus on the intersection between AI and private international law; the legitimacy, performance and conditions of using LLMs in judicial decision-making; and empirical studies on civil procedure and international commercial arbitration.</p>
 
-    <p>I am applying to doctoral programmes for 2027 entry, and am always happy to hear from prospective supervisors or collaborators whose research interests intersect with mine.</p>
+    <p>For my ongoing research, see the <a href="/research/">Research</a> page. For publications and talks, see the <a href="/publications/">Publications &amp; Talks</a> page.</p>
 
-    <p>If you see an alignment with my work, feel free to reach out at <a href="mailto:maou.y@unic.ac.cy">maou.y@unic.ac.cy</a>.</p>
+    <p>I am applying to doctoral programmes for 2027 entry, and would be happy to hear from prospective supervisors or collaborators whose research interests intersect with mine, at <a href="mailto:maou.y@unic.ac.cy">maou.y@unic.ac.cy</a>.</p>
   </div>
 
   <section class="section">
     <h2 class="section-title">Selected publications and talks</h2>
     <ul class="works">
       <li>
-        <p class="work-cite">Maou Y and Kyriakides N, &lsquo;<span class="title">Does It Still Fit? Assessing the Suitability of the EU&rsquo;s Private International Law Framework in the Wake of AI-Related Non-Contractual Cross-Border Disputes</span>&rsquo; (forthcoming) <em>Journal of Private International Law</em></p>
+        <p class="work-cite">Maou Y and Kyriakides N, ‘<span class="title">Does It Still Fit? Assessing the EU’s Private International Law Framework in the Wake of AI-Related Cross-Border Disputes</span>’ (forthcoming) <em>Journal of Private International Law</em></p>
         <p class="work-sub">Presented at the Journal of Private International Law 20th Anniversary Conference, UCL Faculty of Laws, September 2025 <a class="ref" href="https://www.ucl.ac.uk/laws/events/2025/sep/journal-private-international-law-20th-anniversary-conference">event</a></p>
       </li>
       <li>
-        <p class="work-cite">Maou Y and Kyriakides N, &lsquo;<span class="title">Cyprus</span>&rsquo; in M Codazzi, P Eichm&uuml;ller and M Pasqua (eds), <em>Law Applicable to Non-Contractual Obligations Arising out of Privacy and Personality Rights</em> (Edward Elgar, EAPIL Series, forthcoming 2026)</p>
-        <p class="work-sub">National report presented at the 5th Research Project Conference, University of Luxembourg, March 2026 <a class="ref" href="https://eapil.org/2026/01/16/eapil-yrn-5th-research-project-updates-and-intermediate-meeting-report/">project</a></p>
+        <p class="work-cite">Maou Y and Kyriakides N, ‘<span class="title">Cyprus</span>’ in M Codazzi, P Eichmüller and M Pasqua (eds), <em>Law Applicable to Non-Contractual Obligations Arising out of Privacy and Personality Rights</em> (Edward Elgar, EAPIL Series, forthcoming)</p>
+        <p class="work-sub">National report presented at the EAPIL YRN Conference on Privacy and Personality Rights, University of Luxembourg, March 2026 <a class="ref" href="https://eapil.org/2026/01/16/eapil-yrn-5th-research-project-updates-and-intermediate-meeting-report/">project</a></p>
       </li>
       <li>
-        <p class="work-cite">Maou Y, &lsquo;<span class="title">The Achilles Heel of Rome II: Article&nbsp;5, &ldquo;Marketing&rdquo;, and Digital Products</span>&rsquo;</p>
-        <p class="work-sub">Presented at the 2nd Riga Private International Law Conference, Riga Graduate School of Law, June 2026 <a class="ref" href="https://www.unic.ac.cy/rome-ii-and-digital-products-at-the-2nd-riga-private-international-law-conference/">announcement</a></p>
+        <p class="work-cite">Maou Y, ‘<span class="title">Interim Applications and Remedies</span>’ in N Kyriakides and others (eds), <em>Cypriot Civil Procedure</em> (Nomiki Bibliothiki 2025) ch 14 <a class="ref" href="https://www.nb.org/ekdoseis/kypriako-dikaio/kipriaki-politiki-dikonomia-v2.html">publisher</a></p>
       </li>
       <li>
-        <p class="work-cite">Maou Y, &lsquo;<span class="title">Interim Applications and Remedies</span>&rsquo; in N Kyriakides and others (eds), <em>Cypriot Civil Procedure</em> (Nomiki Bibliothiki 2025) ch 14 <a class="ref" href="https://www.nb.org/ekdoseis/kypriako-dikaio/kipriaki-politiki-dikonomia-v2.html">publisher</a></p>
-      </li>
-      <li>
-        <p class="work-cite">Maou Y, &lsquo;<span class="title">Judicial Analytics: A Revolutionary Tool of the 21st Century Courtroom</span>&rsquo;, <em>Procedural Law Unit 3rd Annual Symposium E-Book</em> (University of Nicosia 2024)</p>
-        <p class="work-sub">Presented at the Procedural Law Unit 3rd Annual Symposium, panel on the Evaluation of Judges <a class="ref" href="https://www.unic.ac.cy/wp-content/uploads/2024/12/PLU-3rd-Annual-Symposium-E-Book.pdf">e-book</a> <a class="ref" href="https://www.youtube.com/watch?v=G1u3xZSiGao">video</a></p>
+        <p class="work-cite">Maou Y, ‘<span class="title">Judicial Analytics: A Revolutionary Tool of the 21st Century Courtroom</span>’, <em>Procedural Law Unit 3rd Annual Symposium E-Book</em> (University of Nicosia 2024)</p>
+        <p class="work-sub">Presented at the Procedural Law Unit 3rd Annual Symposium <a class="ref" href="https://www.unic.ac.cy/wp-content/uploads/2024/12/PLU-3rd-Annual-Symposium-E-Book.pdf">e-book</a> <a class="ref" href="https://www.youtube.com/watch?v=G1u3xZSiGao">video</a></p>
       </li>
     </ul>
     <p class="see-more">For more, see <a href="/publications/">Publications &amp; Talks</a>.</p>
@@ -336,13 +529,10 @@
 
   <section class="section">
     <h2 class="section-title">Education</h2>
-
     <div class="entry">
       <p class="entry-head">LLM, New York University School of Law, <span class="year">2020</span></p>
-      <p class="detail">Specialisation in <strong>International Business Regulation, Litigation and Arbitration</strong>, under programme director Professor Franco Ferrari.</p>
-      <p class="detail"><span class="label">Thesis:</span> <em>A New Approach to the Enforceability of Unilateral Arbitration Clauses</em>.<sup>*</sup></p>
-      <p class="detail minor"><span class="label">Selected modules:</span> US conflict of laws under Professor Linda J. Silberman; international trade law under Professor Robert Howse; and international commercial arbitration under Professor Friedrich Rosenfeld.</p>
-      <p class="detail footnote">*All Spring 2020 coursework at NYU Law was graded credit/fail under the <a href="https://www.law.nyu.edu/c19/morrison-to-community-20200325a">Law School&rsquo;s pandemic grading policy</a>.</p>
+      <p class="detail">Specialisation in <a href="https://www.law.nyu.edu/llmjsd/ibrla"><strong>International Business Regulation, Litigation and Arbitration</strong></a>.</p>
+      <p class="detail"><span class="label">Thesis:</span> <em>A New Approach to the Enforceability of Unilateral Arbitration Clauses</em>, supervised by Professor Franco Ferrari.</p>
     </div>
 
     <div class="entry">
@@ -383,12 +573,9 @@
     <ul class="socials">
       <li><a href="mailto:maou.y@unic.ac.cy" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
       <li><a href="https://www.linkedin.com/in/yiolantimaou/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a></li>
-      <li><a href="#" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg></a></li>
-      <li><a href="#" aria-label="ORCID" title="ORCID"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.588-1.444 3.588-3.722 0-2.016-1.088-3.722-3.588-3.722h-2.297z"/></svg></a></li>
     </ul>
     <p class="foot-note">Nicosia, Cyprus</p>
   </footer>
 
-</div>
-</body>
+</div></body>
 </html>

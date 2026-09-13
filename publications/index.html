@@ -20,7 +20,7 @@
     --display: "Playfair Display", "Iowan Old Style", Georgia, serif;
     --body: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
 
-    --measure: 40rem;
+    --measure: 50rem;
     color-scheme: light;
   }
 
@@ -269,13 +269,77 @@
   }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-</style>
-<style>
-  /* ---------- page: Publications & Talks ---------- */
+  /* ---------- inner pages ---------- */
 
   /* the masthead already draws a rule, so the first heading needs none of its own */
   .page-intro { margin-top: 2.6rem; }
   .page-intro > .section-title { border-top: 0; padding-top: 0; }
+
+  /* ---------- page: Research ---------- */
+
+  .lede > p { margin: 0 0 .72rem; }
+  .lede > p:last-child { margin-bottom: 0; }
+
+  /* one field of research: narrative, then the projects running in it */
+  .field { margin-bottom: 2.5rem; }
+  .field:last-child { margin-bottom: 0; }
+  .field + .field { border-top: 1px solid var(--rule); padding-top: 2.1rem; }
+
+  .field-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    line-height: 1.25;
+    margin: 0 0 .9rem;
+  }
+  /* primary / secondary: a label beside the heading, not part of its voice */
+  .field-title .rank {
+    font-family: var(--body);
+    font-size: .67rem;
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-left: .55rem;
+    vertical-align: .18em;
+    white-space: nowrap;
+  }
+
+  .field > p { margin: 0 0 .72rem; }
+
+  .projects-label {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: .95rem;
+    line-height: 1.2;
+    margin: 1.55rem 0 1rem;
+  }
+
+  /* same dash marker as the lists on the About page */
+  .projects { list-style: none; margin: 0; padding: 0; }
+  .projects li {
+    margin: 0 0 1.55rem;
+    padding-left: 1.15rem;
+    position: relative;
+  }
+  .projects li:last-child { margin-bottom: 0; }
+  .projects li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .72em;
+    width: .45rem;
+    height: 1px;
+    background: var(--rule-strong);
+  }
+
+  .project-title { margin: 0; font-size: .97rem; font-weight: 600; line-height: 1.45; }
+  .project-title .status { font-weight: 400; }
+
+  .project-note { margin: .3rem 0 0; font-size: .89rem; line-height: 1.52; }
+  .project-note + .project-note { margin-top: .6rem; }
+
+  /* ---------- page: Publications & Talks ---------- */
 
   .subhead {
     font-family: var(--display);
@@ -326,6 +390,82 @@
     .talk { flex-direction: column; gap: .8rem; }
     .talk-photo { width: 100%; flex-basis: auto; }
   }
+
+  /* ---------- teaching ---------- */
+
+  .appointments { margin: 0 0 1.15rem; }
+  .appointments p { margin: 0 0 .2rem; font-weight: 600; font-size: .97rem; }
+  .appointments p:last-child { margin-bottom: 0; }
+  .appointments .term { font-weight: 400; font-size: .89rem; }
+
+  .teach-intro { margin: 0 0 .42rem; font-size: .97rem; line-height: 1.5; }
+  .teach-intro:last-of-type { margin-bottom: 0; }
+
+  /* course: heading, then a smaller description, then a tight stack of terms */
+  .course { margin: 0 0 2.3rem; }
+  .course:last-child { margin-bottom: 0; }
+
+  .course-head { margin: 0 0 .28rem; font-weight: 600; }
+  .course-head .meta { font-weight: 400; }
+
+  .course-desc { margin: 0; font-size: .89rem; line-height: 1.52; }
+
+  .courses-note {
+    margin: 1.7rem 0 0;
+    font-size: .83rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .terms { list-style: none; margin: .68rem 0 0; padding: 0; }
+  .terms li {
+    margin: 0 0 .12rem;
+    padding-left: 1.1rem;
+    position: relative;
+    font-size: .89rem;
+    line-height: 1.5;
+  }
+  .terms li:last-child { margin-bottom: 0; }
+  .terms li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .7em;
+    width: .45rem;
+    height: 1px;
+    background: var(--rule-strong);
+  }
+
+  /* ---------- contact: a single centred column ---------- */
+
+  .contact { text-align: center; }
+  .contact .section-title { text-align: center; margin-bottom: 1.6rem; }
+
+  .contact-intro {
+    max-width: 30rem;
+    margin: 0 auto 2.4rem;
+  }
+  /* balance keeps the lines of a centred paragraph close in length */
+  .contact-intro p { margin: 0 0 .72rem; text-wrap: balance; }
+  .contact-intro p:last-child { margin-bottom: 0; }
+
+  .contact-block { margin: 0 0 2.1rem; }
+  .contact-block p { margin: 0; font-size: .97rem; line-height: 1.42; }
+  .contact-block .who { font-weight: 600; }
+  .contact-block .mail { margin-top: .95rem; }
+
+  .profiles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+    font-size: .97rem;
+  }
+  .profiles li { line-height: 1.4; }
+  .profiles .pending { color: var(--faint); }
 </style>
 </head>
 <body>
@@ -336,7 +476,7 @@
     <nav class="nav" aria-label="Sections">
       <a href="/">About</a>
       <a href="/research/">Research</a>
-      <a href="#" aria-current="page">Publications &amp; Talks</a>
+      <a href="/publications/" aria-current="page">Publications &amp; Talks</a>
       <a href="/teaching/">Teaching</a>
       <a href="/contact/">Contact</a>
     </nav>
@@ -347,24 +487,22 @@
     <h2 class="section-title">Publications</h2>
     <ul class="works">
       <li class="pub">
-        <p class="work-cite">Maou Y and Kyriakides N, ‘<span class="title">Does It Still Fit? Assessing the Suitability of the EU’s Private International Law Framework in the Wake of AI-Related Non-Contractual Cross-Border Disputes</span>’ (forthcoming) <em>Journal of Private International Law</em></p>
-        <p class="pub-note">Examines whether the EU’s private international law framework, Brussels Ia and Rome II, remains fit for purpose for cross-border non-contractual disputes arising from the deployment of AI systems. The article assesses the pressure that AI’s distinctive features place on existing jurisdiction and choice-of-law rules, considers the case for bespoke rules for AI-related harm, and proposes targeted incremental reform of the existing instruments as the pragmatic alternative.</p>
-        <p class="work-sub">Presented at the Journal of Private International Law 20th Anniversary Conference, UCL Faculty of Laws, September 2025 <a class="ref" href="https://www.ucl.ac.uk/laws/events/2025/sep/journal-private-international-law-20th-anniversary-conference">event</a></p>
+        <p class="work-cite">Maou Y and Kyriakides N, ‘<span class="title">Does It Still Fit? Assessing the EU’s Private International Law Framework in the Wake of AI-Related Cross-Border Disputes</span>’ (forthcoming) <em>Journal of Private International Law</em></p>
+        <p class="pub-note">Our article examines whether the EU’s private international law framework, Brussels Ia, remains fit for purpose for cross-border non-contractual disputes arising from the deployment of AI systems.</p>
       </li>
       <li class="pub">
-        <p class="work-cite">Maou Y and Kyriakides N, ‘<span class="title">Cyprus</span>’ in M Codazzi, P Eichmüller and M Pasqua (eds), <em>Law Applicable to Non-Contractual Obligations Arising out of Privacy and Personality Rights</em> (Edward Elgar, EAPIL Series, forthcoming 2026)</p>
-        <p class="pub-note">The Cyprus national report in the EAPIL Young Research Network’s 5th Research Project, a comparative study of twenty-three jurisdictions intended to inform the revision of the Rome II Regulation. The report addresses Cyprus’s position as an EU Member State without a codified private international law act, in which the applicable conflicts rule derives from English common law.</p>
-        <p class="work-sub">Presented at the 5th Research Project Conference, University of Luxembourg, March 2026 <a class="ref" href="https://eapil.org/2026/01/16/eapil-yrn-5th-research-project-updates-and-intermediate-meeting-report/">announcement</a></p>
+        <p class="work-cite">Maou Y and Kyriakides N, ‘<span class="title">Cyprus</span>’ in M Codazzi, P Eichmüller and M Pasqua (eds), <em>Law Applicable to Non-Contractual Obligations Arising out of Privacy and Personality Rights</em> (Edward Elgar, EAPIL Series, forthcoming)</p>
+        <p class="pub-note">Our chapter reports on the Cypriot rules on the law applicable to privacy and personality rights, as the national contribution to the EAPIL Young Research Network’s 5th Research Project. For more on this project, see the <a href="/research/">Research</a> page.</p>
       </li>
       <li class="pub">
         <p class="work-cite">Maou Y, ‘<span class="title">Interim Applications and Remedies</span>’ in N Kyriakides and others (eds), <em>Cypriot Civil Procedure</em> (Nomiki Bibliothiki 2025) ch 14</p>
-        <p class="pub-note">A contribution to the first scholarly commentary on the Cypriot Civil Procedure Rules 2023, written alongside more than twenty Cypriot academics and practitioners. The chapter analyses interim applications and remedies under the new Rules against English CPR practice and case law, including the treatment of freezing injunctions.</p>
+        <p class="pub-note">In my contribution to this commentary, I analysed interim applications and remedies under the new Rules against English CPR practice and case law. For more on this project, see the <a href="/research/">Research</a> page.</p>
         <p class="work-sub"><a class="ref" href="https://www.nb.org/ekdoseis/kypriako-dikaio/kipriaki-politiki-dikonomia-v2.html">publisher</a></p>
       </li>
       <li class="pub">
         <p class="work-cite">Maou Y, ‘<span class="title">Judicial Analytics: A Revolutionary Tool of the 21st Century Courtroom</span>’, <em>Procedural Law Unit 3rd Annual Symposium E-Book</em> (University of Nicosia 2024)</p>
-        <p class="pub-note">The first treatment of judicial analytics in Cypriot legal scholarship. The paper introduces the application of data analysis and statistical modelling to judicial decisions, asks whether and how the field can be brought into judicial evaluation, and proposes a ‘traffic light’ framework that classifies judicial-performance data by reliability, alongside an assessment of the data, language and regulatory preconditions for a Cypriot judicial analytics prototype.</p>
-        <p class="work-sub">Presented at the Procedural Law Unit 3rd Annual Symposium, University of Nicosia, December 2023 <a class="ref" href="https://www.unic.ac.cy/wp-content/uploads/2024/12/PLU-3rd-Annual-Symposium-E-Book.pdf">e-book</a></p>
+        <p class="pub-note">My paper was the first known treatment of judicial analytics in Cypriot legal scholarship. It introduces the application of data analysis and statistical modelling to judicial decisions, and explores the possibilities and conditions of bringing the field into the evaluation of judges in Cyprus.</p>
+        <p class="work-sub"><a class="ref" href="https://www.unic.ac.cy/wp-content/uploads/2024/12/PLU-3rd-Annual-Symposium-E-Book.pdf">e-book</a></p>
       </li>
     </ul>
   </section>
@@ -376,16 +514,14 @@
         <div class="talk-body">
           <p class="talk-title">To Trust or Not to Trust? AI-Assisted Judgments and the Future<br>of Mutual Trust under Brussels Ia <span class="with">(with Nicolas Kyriakides)</span></p>
           <p class="talk-venue">11th Journal of Private International Law Conference<br>University of Zurich · April 2027 · <a class="ref" href="https://www.ema.uzh.ch/en/register/journal-of-private-international-law-conference.html?group=9ddebae3-d055-42cb-bbbe-e8a7f8537739#registration">event</a></p>
-          <p class="talk-note">Abstract accepted for presentation in a parallel panel session.</p>
+          <p class="talk-note">For more on this, see the <a href="/research/">Research</a> page.</p>
         </div>
       </article>
-
     <h3 class="subhead">2026</h3>
       <article class="talk">
         <div class="talk-body">
           <p class="talk-title">The Achilles Heel of Rome II: Article&nbsp;5, ‘Marketing’, and Digital Products</p>
           <p class="talk-venue">2nd Riga Private International Law Conference, <em>European Private International Law: An Era of Reforms</em><br>Riga Graduate School of Law · June 2026 (online) · <a class="ref" href="https://www.unic.ac.cy/rome-ii-and-digital-products-at-the-2nd-riga-private-international-law-conference/">event</a> <a class="ref" href="https://www.rgsl.edu.lv/news-and-events/events/riga-private-international-law-conference-european-private-international-law-an-era-of-reforms">conference</a></p>
-          <p class="talk-note">Working paper in progress.</p>
         </div>
         <img class="talk-photo" src="/images/riga.jpg" alt="Title slide of the Riga presentation">
       </article>
@@ -393,28 +529,23 @@
         <div class="talk-body">
           <p class="talk-title">Cyprus’s Legal Information Gap</p>
           <p class="talk-venue">Cyprus Bar Association, Committee on Civil Procedure Rules and Reform<br>Nicosia · May 2026 (online)</p>
-          <p class="talk-note">Advisory presentation on the governance of legal information in Cyprus.</p>
         </div>
       </article>
       <article class="talk">
         <div class="talk-body">
           <p class="talk-title">Cyprus national report on the law applicable to privacy<br>and personality rights</p>
           <p class="talk-venue">EAPIL YRN Conference on Privacy and Personality Rights<br>University of Luxembourg · March 2026 · <a class="ref" href="https://eapil.org/2026/03/20/eapil-yrn-conference-on-privacy-and-personality-rights-luxembourg-and-online-26-march-2026/">event</a></p>
-          <p class="talk-note">Forthcoming Cyprus chapter in the Edward Elgar EAPIL Series.</p>
         </div>
         <img class="talk-photo" src="/images/eapil.jpg" alt="Participants in the EAPIL Young Research Network conference at the University of Luxembourg">
       </article>
-
     <h3 class="subhead">2025</h3>
       <article class="talk">
         <div class="talk-body">
           <p class="talk-title">Does It Still Fit? Assessing the EU’s Private International Law Framework in the Wake of AI-Related Cross-Border Disputes <span class="with">(with Nicolas Kyriakides)</span></p>
           <p class="talk-venue">Journal of Private International Law 20th Anniversary Conference<br>UCL Faculty of Laws, London · September 2025 · <a class="ref" href="https://www.ucl.ac.uk/laws/events/2025/sep/journal-private-international-law-20th-anniversary-conference">event</a></p>
-          <p class="talk-note">Forthcoming in the <em>Journal of Private International Law</em>.</p>
         </div>
         <img class="talk-photo" src="/images/ucl.jpg" alt="Yiolanti Maou on the panel at UCL Faculty of Laws">
       </article>
-
     <h3 class="subhead">2023</h3>
       <article class="talk">
         <div class="talk-body">
@@ -424,7 +555,6 @@
         </div>
         <img class="talk-photo" src="/images/plu.jpg" alt="Yiolanti Maou presenting at the Procedural Law Unit symposium">
       </article>
-
   </section>
 
   <footer class="foot">
@@ -438,12 +568,9 @@
     <ul class="socials">
       <li><a href="mailto:maou.y@unic.ac.cy" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
       <li><a href="https://www.linkedin.com/in/yiolantimaou/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a></li>
-      <li><a href="#" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg></a></li>
-      <li><a href="#" aria-label="ORCID" title="ORCID"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.588-1.444 3.588-3.722 0-2.016-1.088-3.722-3.588-3.722h-2.297z"/></svg></a></li>
     </ul>
     <p class="foot-note">Nicosia, Cyprus</p>
   </footer>
 
-</div>
-</body>
+</div></body>
 </html>
