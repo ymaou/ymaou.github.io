@@ -281,63 +281,77 @@
   .lede > p:last-child { margin-bottom: 0; }
 
   /* one field of research: narrative, then the projects running in it */
-  .field { margin-bottom: 2.5rem; }
+  .field { margin-bottom: 2.2rem; }
   .field:last-child { margin-bottom: 0; }
-  .field + .field { border-top: 1px solid var(--rule); padding-top: 2.1rem; }
+  .field + .field { border-top: 1px solid var(--rule); padding-top: 1.9rem; }
 
   .field-title {
     font-family: var(--display);
     font-weight: 600;
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     line-height: 1.25;
-    margin: 0 0 .9rem;
+    margin: 0 0 .85rem;
   }
   /* primary / secondary: a label beside the heading, not part of its voice */
   .field-title .rank {
     font-family: var(--body);
-    font-size: .67rem;
+    font-size: .83rem;
     font-weight: 400;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin-left: .55rem;
-    vertical-align: .18em;
+    font-style: italic;
+    color: var(--muted);
+    margin-left: .5rem;
     white-space: nowrap;
   }
 
-  .field > p { margin: 0 0 .72rem; }
+  /* narrative at the entry size used on About and Publications; the lede stays full size */
+  .field > p { margin: 0 0 .7rem; font-size: .9rem; line-height: 1.6; max-width: 44rem; }
 
-  .projects-label {
+  /* sub-headings inside a field (Background, Ongoing projects): the Publications year-heading style */
+  .field-sub {
     font-family: var(--display);
     font-weight: 600;
-    font-size: .95rem;
+    font-size: 1rem;
     line-height: 1.2;
-    margin: 1.55rem 0 1rem;
+    margin: 1.7rem 0 .7rem;
   }
+  .field-title + .field-sub { margin-top: 0; }
 
-  /* same dash marker as the lists on the About page */
-  .projects { list-style: none; margin: 0; padding: 0; }
-  .projects li {
-    margin: 0 0 1.55rem;
-    padding-left: 1.15rem;
+  /* everything under a sub-heading steps in from it */
+  .field > p, .field > .strands, .field > .projects { margin-left: 1.5rem; }
+
+  /* the strands of current research: the same dash list as the terms on Teaching */
+  .strands { list-style: none; margin: -.2rem 0 .68rem; padding: 0; max-width: 44rem; }
+  .strands li {
+    margin: 0 0 .22rem;
+    padding-left: 1.1rem;
     position: relative;
+    font-size: .9rem;
+    line-height: 1.55;
   }
-  .projects li:last-child { margin-bottom: 0; }
-  .projects li::before {
+  .strands li:last-child { margin-bottom: 0; }
+  .strands li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: .72em;
+    top: .7em;
     width: .45rem;
     height: 1px;
     background: var(--rule-strong);
   }
 
-  .project-title { margin: 0; font-size: .97rem; font-weight: 600; line-height: 1.45; }
-  .project-title .status { font-weight: 400; }
 
-  .project-note { margin: .3rem 0 0; font-size: .89rem; line-height: 1.52; }
-  .project-note + .project-note { margin-top: .6rem; }
+  /* projects: entries in the shape of the Publications list; the title sits flush,
+     the status line and note hang beneath it. No dash: the dashed list above is the strands */
+  .projects { list-style: none; margin: 0; padding: 0; }
+  .projects li { margin: 0 0 1.55rem; padding: 0; }
+  .projects li:last-child { margin-bottom: 0; }
+
+  .project-title { margin: 0; font-size: .9rem; font-weight: 600; line-height: 1.45; }
+  /* the bracketed kind and status: smaller and grey, so the title carries the line */
+  .project-title .status { display: block; font-weight: 400; font-size: .86rem; color: var(--muted); line-height: 1.45; margin-top: .1rem; padding-left: 1.2rem; max-width: 44rem; }
+
+  .project-note { margin: .36rem 0 0; padding-left: 1.2rem; font-size: .9rem; line-height: 1.55; max-width: 44rem; }
+  .project-note + .project-note { margin-top: .5rem; }
 
   /* ---------- page: Publications & Talks ---------- */
 
@@ -490,13 +504,13 @@
   <div class="bio">
     <p>I am a legal researcher, lecturer, and dual-qualified practitioner with a background in cross-border commercial and corporate litigation.</p>
 
-    <p>I hold an Adjunct Lecturer position at the <a href="https://www.unic.ac.cy/school-of-law/">School of Law of the University of Nicosia</a>, where, in parallel, I conduct research as an Associate Researcher at the University’s <a href="https://www.unic.ac.cy/school-of-law/plu/">Procedural Law Unit</a>.</p>
+    <p>I hold an Adjunct Lecturer position at the <a href="https://www.unic.ac.cy/school-of-law/">School of Law of the University of Nicosia</a>, and I am an Associate Researcher at the University’s <a href="https://www.unic.ac.cy/school-of-law/plu/">Procedural Law Unit</a>.</p>
 
     <p>I have written on civil procedure, private international law, the use of artificial intelligence in civil adjudication, and legal informatics. My work has appeared in Cypriot and European commentaries, including the first scholarly commentary on the Cypriot Civil Procedure Rules, with further work forthcoming in the <em>Journal of Private International Law</em> and the Edward Elgar EAPIL series.</p>
 
     <p>As part of my academic work, I have also advised the Cyprus Bar Association on the governance of legal information in Cyprus, and appeared before committees of the House of Representatives, contributing to parliamentary discussions on judicial and civil procedure reform.</p>
 
-    <p>In my work, I bring together elements of three jurisdictions: England and Wales, where I read law and later cross-qualified as a Solicitor; the United States, where I completed my LLM; and Cyprus, where I have practised as an Advocate in commercial and corporate litigation. I draw on all three continually, bringing to my research a comparative appetite, a measure of pragmatism, and (usually) a pull towards questions on which academic and practitioner interests converge.</p>
+    <p>My training and practice span three jurisdictions: England and Wales, where I read law and later cross-qualified as a Solicitor; the United States, where I completed my LLM; and Cyprus, where I have practised as an Advocate in commercial and corporate litigation. I draw on all three continually, bringing to my research a comparative appetite, a measure of pragmatism, and (usually) a pull towards questions on which academic and practitioner interests converge.</p>
 
     <p>My current research projects focus on the intersection between AI and private international law; the legitimacy, performance and conditions of using LLMs in judicial decision-making; and empirical studies on civil procedure and international commercial arbitration.</p>
 
@@ -555,7 +569,7 @@
   </section>
 
   <section class="section">
-    <h2 class="section-title">Admissions</h2>
+    <h2 class="section-title">Bar admissions</h2>
     <ul class="lines">
       <li>Advocate, Cyprus Bar Association, 2021</li>
       <li>Solicitor of England and Wales, 2025</li>

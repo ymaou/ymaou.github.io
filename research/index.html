@@ -281,63 +281,77 @@
   .lede > p:last-child { margin-bottom: 0; }
 
   /* one field of research: narrative, then the projects running in it */
-  .field { margin-bottom: 2.5rem; }
+  .field { margin-bottom: 2.2rem; }
   .field:last-child { margin-bottom: 0; }
-  .field + .field { border-top: 1px solid var(--rule); padding-top: 2.1rem; }
+  .field + .field { border-top: 1px solid var(--rule); padding-top: 1.9rem; }
 
   .field-title {
     font-family: var(--display);
     font-weight: 600;
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     line-height: 1.25;
-    margin: 0 0 .9rem;
+    margin: 0 0 .85rem;
   }
   /* primary / secondary: a label beside the heading, not part of its voice */
   .field-title .rank {
     font-family: var(--body);
-    font-size: .67rem;
+    font-size: .83rem;
     font-weight: 400;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin-left: .55rem;
-    vertical-align: .18em;
+    font-style: italic;
+    color: var(--muted);
+    margin-left: .5rem;
     white-space: nowrap;
   }
 
-  .field > p { margin: 0 0 .72rem; }
+  /* narrative at the entry size used on About and Publications; the lede stays full size */
+  .field > p { margin: 0 0 .7rem; font-size: .9rem; line-height: 1.6; max-width: 44rem; }
 
-  .projects-label {
+  /* sub-headings inside a field (Background, Ongoing projects): the Publications year-heading style */
+  .field-sub {
     font-family: var(--display);
     font-weight: 600;
-    font-size: .95rem;
+    font-size: 1rem;
     line-height: 1.2;
-    margin: 1.55rem 0 1rem;
+    margin: 1.7rem 0 .7rem;
   }
+  .field-title + .field-sub { margin-top: 0; }
 
-  /* same dash marker as the lists on the About page */
-  .projects { list-style: none; margin: 0; padding: 0; }
-  .projects li {
-    margin: 0 0 1.55rem;
-    padding-left: 1.15rem;
+  /* everything under a sub-heading steps in from it */
+  .field > p, .field > .strands, .field > .projects { margin-left: 1.5rem; }
+
+  /* the strands of current research: the same dash list as the terms on Teaching */
+  .strands { list-style: none; margin: -.2rem 0 .68rem; padding: 0; max-width: 44rem; }
+  .strands li {
+    margin: 0 0 .22rem;
+    padding-left: 1.1rem;
     position: relative;
+    font-size: .9rem;
+    line-height: 1.55;
   }
-  .projects li:last-child { margin-bottom: 0; }
-  .projects li::before {
+  .strands li:last-child { margin-bottom: 0; }
+  .strands li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: .72em;
+    top: .7em;
     width: .45rem;
     height: 1px;
     background: var(--rule-strong);
   }
 
-  .project-title { margin: 0; font-size: .97rem; font-weight: 600; line-height: 1.45; }
-  .project-title .status { font-weight: 400; }
 
-  .project-note { margin: .3rem 0 0; font-size: .89rem; line-height: 1.52; }
-  .project-note + .project-note { margin-top: .6rem; }
+  /* projects: entries in the shape of the Publications list; the title sits flush,
+     the status line and note hang beneath it. No dash: the dashed list above is the strands */
+  .projects { list-style: none; margin: 0; padding: 0; }
+  .projects li { margin: 0 0 1.55rem; padding: 0; }
+  .projects li:last-child { margin-bottom: 0; }
+
+  .project-title { margin: 0; font-size: .9rem; font-weight: 600; line-height: 1.45; }
+  /* the bracketed kind and status: smaller and grey, so the title carries the line */
+  .project-title .status { display: block; font-weight: 400; font-size: .86rem; color: var(--muted); line-height: 1.45; margin-top: .1rem; padding-left: 1.2rem; max-width: 44rem; }
+
+  .project-note { margin: .36rem 0 0; padding-left: 1.2rem; font-size: .9rem; line-height: 1.55; max-width: 44rem; }
+  .project-note + .project-note { margin-top: .5rem; }
 
   /* ---------- page: Publications & Talks ---------- */
 
@@ -486,8 +500,7 @@
   <section class="section page-intro">
     <h2 class="section-title">Research</h2>
     <div class="lede">
-      <p>I am an Associate Researcher at the <a href="https://www.unic.ac.cy/school-of-law/plu/">Procedural Law Unit</a> of the University of Nicosia.</p>
-      <p>Over the past three years I have worked on private international law, comparative civil procedure and international commercial arbitration, mainly with doctrinal and comparative methods. My research has since extended to judicial decision-making and AI, and to the performance of LLMs in adjudication.</p>
+      <p>My research is in private international law and the use of AI in judicial decision-making as primary areas, with comparative civil procedure, international commercial arbitration and legal informatics as secondary ones. I work primarily with doctrinal and comparative methods, and more recently with empirical and computational ones.</p>
     </div>
   </section>
 
@@ -495,9 +508,15 @@
     <h2 class="section-title">Areas of research</h2>
     <div class="field">
       <h3 class="field-title">Private international law<span class="rank">primary</span></h3>
-      <p>I first studied US conflict of laws under Professor Linda J. Silberman at NYU School of Law, and, thereafter, spent five years practising in the field, representing clients on matters of jurisdiction, applicable law, and the recognition and enforcement of judgments under the European Regulations. I have also been teaching private international law at the University of Nicosia since 2024.</p>
-      <p>My current research is in the interaction between the EU conflicts framework and AI (including the circulation of AI-assisted judgments); the gaps within the Cypriot conflicts framework and the case for codification; and the conflicts-related performance and blind spots of LLM tools used for legal advice and judicial decision-making.</p>
-      <p class="projects-label">Ongoing projects</p>
+      <h4 class="field-sub">Background</h4>
+      <p>I studied US conflict of laws under Professor Linda J. Silberman at NYU School of Law, and, thereafter, spent five years practising in the field, representing clients on matters of jurisdiction, applicable law, and the recognition and enforcement of judgments under the European Regulations. I have also been teaching private international law at the University of Nicosia since 2024.</p>
+      <p>My current research is in:</p>
+      <ul class="strands">
+        <li>the interaction between the EU conflicts framework and AI (including the circulation of AI-assisted judgments);</li>
+        <li>the gaps within the Cypriot conflicts framework and the case for codification; and</li>
+        <li>the conflicts-related performance and blind spots of LLM tools used for legal advice and judicial decision-making.</li>
+      </ul>
+      <h4 class="field-sub">Ongoing projects</h4>
       <ul class="projects">
       <li>
         <p class="project-title">‘To Trust or Not to Trust? AI-Assisted Judgments and the Future of Mutual Trust under Brussels Ia’ <span class="status">(co-authored paper · in progress · presentation forthcoming at the <a href="https://www.ema.uzh.ch/en/register/journal-of-private-international-law-conference.html?group=9ddebae3-d055-42cb-bbbe-e8a7f8537739#registration">11th JPIL Conference</a>)</span></p>
@@ -520,9 +539,15 @@
     </div>
     <div class="field">
       <h3 class="field-title">Judicial decision-making and artificial intelligence<span class="rank">primary</span></h3>
+      <h4 class="field-sub">Background</h4>
       <p>I came to this field through my prior work in judicial analytics. In 2023 I conducted a self-directed study of judicial analytics as a potential tool for the evaluation of judges in Cyprus, which I presented at the Procedural Law Unit’s 3rd Annual Symposium and published in the symposium volume. The study introduced judicial analytics to Cypriot legal scholarship, proposed a traffic-light framework for the reliability of judicial-performance data, and assessed the data-infrastructure, language and regulatory preconditions for an analytics-informed system of judicial evaluation in Cyprus.</p>
-      <p>My research focuses on the use of LLMs in judicial decision-making. I study the institutional conditions under which AI-assisted adjudication can be reconciled with judicial independence, accountability and procedural fairness, as well as human oversight models for the judge–LLM interaction. I am also engaged in interdisciplinary research on the performance of LLMs on legal reasoning tasks, particularly in multilingual and multi-jurisdictional settings and on problems of private international law.</p>
-      <p class="projects-label">Ongoing projects</p>
+      <p>My research focuses on the use of LLMs in judicial decision-making. I study:</p>
+      <ul class="strands">
+        <li>the institutional conditions under which AI-assisted adjudication can be reconciled with judicial independence, accountability and procedural fairness;</li>
+        <li>human oversight models for the judge–LLM interaction; and</li>
+        <li>the performance of LLMs on legal reasoning tasks, particularly in multilingual and multi-jurisdictional settings and on problems of private international law.</li>
+      </ul>
+      <h4 class="field-sub">Ongoing projects</h4>
       <ul class="projects">
       <li>
         <p class="project-title">Research programme on AI-assisted adjudication in civil justice <span class="status">(Procedural Law Unit · funding applications in preparation)</span></p>
@@ -535,16 +560,20 @@
     </div>
     <div class="field">
       <h3 class="field-title">Civil procedure and comparative procedural law<span class="rank">secondary</span></h3>
+      <h4 class="field-sub">Background</h4>
       <p>I came to the subject of comparative civil procedure through my background as a litigator in Cyprus and, later, through cross-qualifying as a solicitor of England and Wales.</p>
-      <p>In 2023, Cyprus replaced its colonial-era civil procedure rules with an adaptation of the English CPR. My research focuses on this reform, and specifically on the conditions for the success of the Cypriot CPR 2023 as a legal transplant; the overriding objective and the conditions for its operation in a pre-Woolf procedural culture; and the authority of English CPR doctrine in the Cypriot post-reform era.</p>
-      <p class="projects-label">Ongoing projects</p>
+      <p>In 2023, Cyprus replaced its colonial-era civil procedure rules with an adaptation of the English CPR. My research focuses on this reform, and specifically on:</p>
+      <ul class="strands">
+        <li>the conditions for the success of the Cypriot CPR 2023 as a legal transplant;</li>
+        <li>the overriding objective and the conditions for its operation in a pre-Woolf procedural culture; and</li>
+        <li>the authority of English CPR doctrine in the Cypriot post-reform era.</li>
+      </ul>
+      <h4 class="field-sub">Ongoing projects</h4>
       <ul class="projects">
       <li>
         <p class="project-title"><em>Cypriot Civil Procedure</em> <span class="status">(commentary, N Kyriakides and others eds, Nomiki Bibliothiki 2025)</span></p>
+        <p class="project-note">This is the first scholarly commentary on the new Cypriot Civil Procedure Rules. It was a collaborative work bringing together more than twenty Cypriot academics and practitioners. I wrote chapter 14, on interim applications and remedies. The commentary is being revised as case law under the new Rules develops.</p>
       </li>
-      </ul>
-      <p>This is the first scholarly commentary on the new Cypriot Civil Procedure Rules. It was a collaborative work bringing together more than twenty Cypriot academics and practitioners. I wrote chapter 14, on interim applications and remedies. The commentary is being revised as case law under the new Rules develops.</p>
-      <ul class="projects">
       <li>
         <p class="project-title">Empirical study of Cypriot procedural reform <span class="status">(working paper in progress)</span></p>
         <p class="project-note">I am conducting an empirical study of interim applications decided under the Cypriot Civil Procedure Rules 2023, based on a dataset of first-instance decisions. The project is at the data analysis stage, and a working paper is in progress (dataset available on request).</p>
@@ -553,9 +582,14 @@
     </div>
     <div class="field">
       <h3 class="field-title">International commercial arbitration<span class="rank">secondary</span></h3>
+      <h4 class="field-sub">Background</h4>
       <p>Arbitration was the focus of my graduate studies at NYU School of Law, where I followed the Litigation and Arbitration specialisation and wrote my thesis on the enforceability of unilateral arbitration clauses under the supervision of Professor Franco Ferrari. It has also been part of my practice as a litigator in Cyprus, where I have acted in proceedings for the recognition and enforcement of foreign arbitral awards and for interim measures in aid of arbitration.</p>
-      <p>Given my Cypriot background, my research interests have centred on the treatment of international instruments such as the New York Convention and the UNCITRAL Model Law in small, post-colonial jurisdictions. My current work looks at recognition and enforcement outcomes, and at how they compare across jurisdictions when coded the same way.</p>
-      <p class="projects-label">Ongoing projects</p>
+      <p>Given my Cypriot background, my research interests have centred on the treatment of international instruments such as the New York Convention and the UNCITRAL Model Law in small, post-colonial jurisdictions. My current work looks at:</p>
+      <ul class="strands">
+        <li>recognition and enforcement outcomes; and</li>
+        <li>how they compare across jurisdictions when coded the same way.</li>
+      </ul>
+      <h4 class="field-sub">Ongoing projects</h4>
       <ul class="projects">
       <li>
         <p class="project-title">Empirical study of arbitral award enforcement in Cyprus <span class="status">(working paper in progress)</span></p>
@@ -565,9 +599,14 @@
     </div>
     <div class="field">
       <h3 class="field-title">Legal informatics and free access to law<span class="rank">secondary</span></h3>
+      <h4 class="field-sub">Background</h4>
       <p>I came to this field as a practitioner, through the ordinary difficulty of finding Cypriot case law. In Cyprus, no public body publishes court judgments systematically. The Supreme Court posts a selection of recent judgments on its website, and, otherwise, access depends on CyLaw (private non-profit platform run by the Cyprus Legal Information Institute under the auspices of the Cyprus Bar Association).</p>
-      <p>My research here concerns the consequences of this scarcity. More specifically, I examine the limited potential for automated processing and analysis of Cypriot case law, and the downstream impact on the development and performance of LLMs for Cypriot law. On the doctrinal side, I work on frameworks for access to legal information and the state’s role in providing it, and on publication bias and its effect on the development of doctrine.</p>
-      <p class="projects-label">Ongoing projects</p>
+      <p>My research here concerns:</p>
+      <ul class="strands">
+        <li>the limited potential for automated processing and analysis of Cypriot case law, and the downstream impact on the development and performance of LLMs for Cypriot law; and</li>
+        <li>on the doctrinal side, frameworks for access to legal information and the state’s role in providing it, and publication bias and its effect on the development of doctrine.</li>
+      </ul>
+      <h4 class="field-sub">Ongoing projects</h4>
       <ul class="projects">
       <li>
         <p class="project-title">Legal information policy in Cyprus <span class="status">(advisory work, Cyprus Bar Association · ongoing)</span></p>
