@@ -1,0 +1,27 @@
+# Yiolanti Maou
+
+> Legal researcher, lecturer and dual-qualified practitioner. Adjunct Lecturer at the
+> School of Law, University of Nicosia, and Associate Researcher of the University’s
+> Procedural Law Unit. Advocate (Cyprus) and Solicitor of England and Wales.
+
+Primary fields of research: private international law, and AI in judicial
+decision-making. Secondary fields: civil procedure, international commercial
+arbitration, and legal informatics.
+
+## Pages
+
+- [About](https://yiolantimaou.com/): biography, selected publications and upcoming talks, education,
+  and bar admissions.
+- [Research](https://yiolantimaou.com/research/): five research fields, each with a background and its
+  ongoing projects.
+- [Publications and Talks](https://yiolantimaou.com/publications/): four publications, and conference
+  presentations grouped by year.
+- [Teaching](https://yiolantimaou.com/teaching/): courses at the University of Nicosia School of Law,
+  taught in English and Greek.
+- [Contact](https://yiolantimaou.com/contact/): email, and an invitation to prospective supervisors and
+  collaborators.
+
+## Elsewhere
+
+- ORCID: https://orcid.org/0009-0008-2820-4458
+- LinkedIn: https://www.linkedin.com/in/yiolantimaou/
